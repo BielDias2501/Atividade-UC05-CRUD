@@ -86,6 +86,7 @@ app.get('/servicos/:id', (requisicao,resposta) => {
 //DELETAR SERVICOS
 app.delete('/servico/:id', async (requisicao,resposta) => {
     try {
+        const {id} = requisicao.params;
         const dados1 = [id]
         const consulta1 = `select * from servicos where id = $1`
         const resultado1 = await pool.query(consulta1, dados1)

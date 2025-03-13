@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ### ROTA PARA LISTAR PRODUTOS
 GET http://localhost:3000/servico
 Content-Type: application/json
@@ -36,48 +35,6 @@ Content-Type: application/json
 ### DELETE - DELETAR PRODUTO
 DELETE http://localhost:3000/servico/1
 Content-Type: application/json
-
-=======
-### ROTA PARA LISTAR PRODUTOS
-GET http://localhost:3001/servicos
-Content-Type: application/json
-
-###
-
-### ROTA PARA CADASTRAR SERVICOS
-POST http://localhost:3001/servicos
-Content-Type: application/json
-
-{
-    "id" : "1",
-    "cliente": "Gabriel",
-    "endereco": "Rua jundiaí,721",
-    "tiposervico": "Manutenção",
-    "datahora": "08:00",
-    "status": "Pendente"
-}
-
-###
-
-### EDITAR SERVICOS
-PUT http://localhost:3001/servicos/1
-Content-Type: application/json
-
-{
-    "novoCliente": "Sérgio",
-    "novoEndereco": "Rua Açu,500",
-    "novoTipoServico": "Reparo",
-    "novaDatahora": "10:00",
-    "novoStatus": "Concluido"
-}
-
-###
-
-### DELETE - DELETAR PRODUTO
-DELETE http://localhost:3001/servicos/1
-Content-Type: application/json
-
-###
 
 ### GET PELO ID
 GET http://localhost:3001/servicos/1
