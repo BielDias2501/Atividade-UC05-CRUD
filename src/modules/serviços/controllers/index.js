@@ -3,11 +3,11 @@ const ServicoModel = require ("../models/index")
 class ServicoController{
     static async criar(requisicao,resposta){
         try {
-            const {id,cliente, endereco, tipo_servico, data_hora, status} = requisicao.body
-            if(!id|| !cliente || !endereco || !tipo_servico || !data_hora || !status){
+            const {cliente, endereco, tipo_servico, data_hora, status} = requisicao.body
+            if(!cliente || !endereco || !tipo_servico || !data_hora || !status){
                 return resposta.status(400).json({mensagem: "Todos os campos devem ser preenchidos!"})
             }
-            const novoServico = await ServicoModel.criar(id,cliente, endereco, tipo_servico, data_hora, status)
+            const novoServico = await ServicoModel.criar(cliente, endereco, tipo_servico, data_hora, status)
             resposta.status(201).json({mensagem: "Servico criado com sucesso", servico: novoServico})
         } catch (error) {
             resposta.status(500).json({mensagem:"Erro ao criar o servico!",

@@ -1,10 +1,10 @@
-const pool = require('../../../config/database')
+const {pool} = require('../../../config/database')
 
 class ServicoModel{
     static async criar(cliente, endereco, tipo_servico, data_hora, status){
         const dados = [cliente, endereco, tipo_servico, data_hora, status]
-        const consulta = `insert into servicos(id, cliente, endereco, tipo_servico, data_hora, status)
-        values ($1, $2, $3, $4, $5, $6) returning *`
+        const consulta = `insert into servicos(cliente, endereco, tipo_servico, data_hora, status)
+        values ($1, $2, $3, $4, $5) returning *`
         const novoServico = await pool.query(consulta, dados)
         return novoServico.rows
     }
